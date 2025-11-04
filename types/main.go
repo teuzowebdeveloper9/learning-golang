@@ -14,6 +14,20 @@ func main() {
 
 	fmt.Printf("Is stephane beathfull? %t\n", stephaneBeathfull)
 
+	if stephaneBeathfull {
+		fmt.Println("Yes, stephane is beathfull!")
+	} else {
+		fmt.Println("No, stephane is not beathfull!")
+	}
+
+	stephaneBeathfull = false
+
+	if stephaneBeathfull {
+		fmt.Println("Yes, stephane is beathfull!")
+	} else {
+		fmt.Println("No, stephane is not beathfull!")
+	}
+
 	var mankey any = "A wild mankey appears!"
 	fmt.Println(mankey)
 
@@ -24,4 +38,5 @@ func main() {
 	} else {
 		fmt.Printf("the mankey age is %v\n", mankey)
 	}
+
 }

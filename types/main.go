@@ -15,7 +15,14 @@ func main() {
 	fmt.Printf("Is stephane beathfull? %t\n", stephaneBeathfull)
 
 	if stephaneBeathfull {
-		fmt.Println("Yes, stephane is beathfull!")
+		times := 0
+		for i := 0; i < 5; i++ {
+			times++
+
+			fmt.Printf("Yes, stephane is beathfull! (%d)\n", times)
+		}
+
+		fmt.Printf("You said stephane was beautiful %d times\n", times)
 	} else {
 		fmt.Println("No, stephane is not beathfull!")
 	}
@@ -39,4 +46,11 @@ func main() {
 		fmt.Printf("the mankey age is %v\n", mankey)
 	}
 
+	inferred := "I am inferred"
+
+	fmt.Printf("infired type is %T\n", inferred)
+
+	AgainInferred := 3.14
+
+	fmt.Printf("AgainInferred type is %T\n", AgainInferred)
 }

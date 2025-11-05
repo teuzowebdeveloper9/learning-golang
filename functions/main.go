@@ -26,15 +26,44 @@ func quicksort(arr []int) []int {
 	return append(append(quicksort(left), pivot), quicksort(right)...)
 }
 
+func conditional() []bool {
+	a := true
+	b := false
+
+	if a && !b {
+		fmt.Println("Condition met!")
+	} else {
+		fmt.Println("Condition not met.")
+	}
+
+	return []bool{a, b}
+}
+
+func subtraction(a int, b int) int {
+	if a < b {
+		fmt.Printf("We cannot return negative numbers, so we will invert them.")
+
+		return b - a
+	}
+
+	return a - b
+}
+
 func main() {
 
 	result := sum(3, 5)
 
 	fmt.Println("The sum is:", result)
 
+	numbersSubtracted := subtraction(10, 4)
+
+	fmt.Println("The subtraction is:", numbersSubtracted)
+
 	numbers := []int{10, 7, 8, 9, 1, 5}
 
-	sortedNumbers := quicksort(numbers)
+	var sortedNumbers []int = quicksort(numbers)
 
 	fmt.Println("Sorted numbers:", sortedNumbers)
+
+	conditional()
 }

@@ -14,7 +14,7 @@ func main() {
 	array[3] = 40
 	array[4] = 50
 
-	intslice := array[1:5]
+	intslice := array[:]
 
 	for i := 0; i < len(array); i++ {
 		fmt.Println(array[i])

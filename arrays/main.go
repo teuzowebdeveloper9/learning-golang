@@ -14,9 +14,13 @@ func main() {
 	array[3] = 40
 	array[4] = 50
 
+	intslice := array[1:5]
+
 	for i := 0; i < len(array); i++ {
 		fmt.Println(array[i])
 	}
+
+	fmt.Println(intslice)
 
 	slice := []string{"apple", "banana", "cherry"}
 
@@ -27,5 +31,17 @@ func main() {
 	for _, fruit := range slice {
 		fmt.Println(fruit)
 	}
+
+	var mixedSlices []any
+
+	for _, n := range intslice {
+		mixedSlices = append(mixedSlices, n)
+	}
+
+	for _, s := range slice {
+		mixedSlices = append(mixedSlices, s)
+	}
+
+	fmt.Println(mixedSlices)
 
 }

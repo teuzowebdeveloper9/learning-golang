@@ -6,9 +6,12 @@ Aqui estou consolidando meus estudos em Go e, ao mesmo tempo, revisitando estrut
 ## 🧱 O que está aqui
 
 Nesta pasta estão implementações de estruturas de dados em Go.  
-A **primeira estrutura** que escolhi trabalhar é a **árvore binária de busca (Binary Search Tree, BST)**.
+A **primeira estrutura** que escolhi trabalhar foi a **árvore binária de busca (Binary Search Tree, BST)**.  
+Depois disso, implementei também um **algoritmo de Sliding Window** — uma técnica muito usada em problemas de subarrays e análise de dados em tempo real.
 
-## 🌳 O que é uma Árvore Binária de Busca?
+---
+
+## 🌳 Árvore Binária de Busca (Binary Search Tree)
 
 Uma árvore binária de busca é uma estrutura de dados composta por nós, onde cada nó tem no máximo dois filhos — um “filho à esquerda” e um “filho à direita”. As propriedades principais são:
 
@@ -23,37 +26,63 @@ Aqui está uma ilustração para ajudar a visualizar:
 
 > *Nota: imagem ilustrativa de uma BST para ajudar no entendimento.*
 
-## 🔍 O que eu implementei
-
-Na implementação em Go você encontrará:
+### Implementação em Go
+A implementação em Go inclui:
 
 - `Node` — estrutura para representar cada nó da árvore.  
-- `BinarySearchTree` — estrutura para gerenciar a árvore inteira (raiz, etc).  
-- Métodos básicos:
-  - `Insert(value int)` — para inserir valores.  
-  - `Search(value int) bool` — para buscar a existência de um valor.  
-  - `InOrder()`, `PreOrder()`, `PostOrder()` — para percursos da árvore.  
-  - `Min()` e `Max()` — para encontrar o menor e o maior valor da árvore.  
-- Um exemplo no `main.go` para demonstrar a árvore em funcionamento.
+- `BinarySearchTree` — estrutura que gerencia a árvore inteira (raiz, etc).  
+- Métodos principais:
+  - `Insert(value int)` — insere valores.  
+  - `Search(value int) bool` — busca valores.  
+  - `InOrder()`, `PreOrder()`, `PostOrder()` — percorre a árvore.  
+  - `Min()` e `Max()` — encontra menor e maior valor.  
+
+---
+
+## ⚙️ Sliding Window
+
+O **algoritmo de Sliding Window (janela deslizante)** é uma técnica usada para otimizar o processamento de intervalos contínuos em arrays — muito comum em problemas como:
+
+- Calcular a soma ou média de uma janela fixa.  
+- Encontrar o maior valor em um intervalo móvel.  
+- Processar fluxos de dados em tempo real sem recomputar tudo.
+
+### Exemplo visual
+![Sliding Window](https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTCbSE2ZhYPrkLC9v2z9DhtA9XoeAoGFzOyCQ&s)
+
+> *A janela se move sobre o array, atualizando o resultado de forma incremental.*
+
+### Implementação em Go
+
+No código, implementei duas variações:
+
+- `MaxSumSubarray(nums []int, k int) int` — calcula a maior soma de uma subarray de tamanho `k`.  
+- `MovingAverage(nums []int, k int) []float64` — calcula a média móvel de uma janela de tamanho `k`.
+
+Essas funções mostram como a técnica economiza processamento, reaproveitando o resultado anterior e ajustando apenas os elementos que “entram” e “saem” da janela.
+
+---
 
 ## 🎯 Por que isso é útil?
 
-- Aprender a estruturar código em Go usando structs, métodos e recursão.  
-- Entender como dados podem ser organizados em hierarquias e como isso melhora certas operações (busca, ordenação, etc).  
-- Ter uma base para evoluir: depois dessa árvore, posso implementar **remoção de nós**, **árvores balanceadas**, **heaps**, **grafos**, e muito mais.
+- Aprender a estruturar código em Go usando **structs, funções e recursão**.  
+- Entender como dados podem ser organizados em **hierarquias (árvores)** ou **intervalos dinâmicos (sliding window)**.  
+- Ter base sólida para evoluir para algoritmos mais complexos como **árvores balanceadas, heaps, grafos e algoritmos de streaming**.
+
+---
 
 ## 🛠 Próximos passos
 
-- Implementar a operação **Delete** para remover nós da árvore.  
-- Explorar árvores balanceadas (por exemplo, AVL ou Red-Black Tree).  
-- Ampliar para outras estruturas: filas, pilhas, listas encadeadas, grafos.  
-- Integrar testes automatizados em Go (`testing` package).  
-- Documentar cada estrutura e uso prático.
+- Implementar o método **Delete** na árvore binária.  
+- Criar uma versão otimizada do **Sliding Window** usando deque para máximo/mínimo em O(n).  
+- Explorar outras estruturas: **filas, pilhas, listas encadeadas e grafos**.  
+- Adicionar **testes automatizados** (`testing` package).  
+- Documentar e comparar eficiência de cada estrutura.
 
 ---
 
 Obrigado por acompanhar este estudo comigo!  
 Se quiser comentar, sugerir melhorias ou co-desenvolver, fique à vontade.
 
-Matheus  
-Full-Stack Web Developer / Aprendendo Go & Estruturas de Dados  
+Mateus  
+**Full-Stack Web Developer / Aprendendo Go & Estruturas de Dados**

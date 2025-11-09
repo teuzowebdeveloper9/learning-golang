@@ -22,7 +22,7 @@ func main() {
 
 	fmt.Println(intslice)
 
-	slice := []string{"apple", "banana", "cherry"}
+	slice := []string{"apple", "banana", "cherry", "date"}
 
 	slice = append(slice, "date")
 
